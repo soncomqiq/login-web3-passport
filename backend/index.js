@@ -80,5 +80,7 @@ let authenticate = (req, res, next) => {
 console.log({authenticate})
 
 app.post('/login', authenticate);
+app.get("/profile", passport.authenticate("jwt", {}, () => {
+}))
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
